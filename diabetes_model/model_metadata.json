@@ -1,0 +1,60 @@
+{
+    "model_type": "LogisticRegression",
+    "encoder": "Label Encoder + Min Max Scaler",
+    "oversampling": "SMOTE",
+    "feature_names": [
+        "age",
+        "education_level",
+        "income_level",
+        "physical_activity_minutes_per_week",
+        "diet_score",
+        "family_history_diabetes",
+        "bmi",
+        "waist_to_hip_ratio",
+        "systolic_bp",
+        "cholesterol_total",
+        "hdl_cholesterol",
+        "ldl_cholesterol",
+        "triglycerides",
+        "glucose_fasting",
+        "glucose_postprandial",
+        "insulin_level",
+        "hba1c",
+        "diabetes_risk_score"
+    ],
+    "categorical_cols": [
+        "education_level",
+        "income_level"
+    ],
+    "numerical_cols": [
+        "age",
+        "physical_activity_minutes_per_week",
+        "diet_score",
+        "family_history_diabetes",
+        "bmi",
+        "waist_to_hip_ratio",
+        "systolic_bp",
+        "cholesterol_total",
+        "hdl_cholesterol",
+        "ldl_cholesterol",
+        "triglycerides",
+        "glucose_fasting",
+        "glucose_postprandial",
+        "insulin_level",
+        "hba1c",
+        "diabetes_risk_score"
+    ],
+    "n_features": 18,
+    "model_hyperparameters": {
+        "random_state": 42,
+        "max_iter": 1000
+    },
+    "performance_metrics": {
+        "accuracy": 89.4625,
+        "precision": 90.85497368648089,
+        "recall": 87.75833333333334,
+        "f1_score": 89.27981009707092
+    },
+    "export_date": "2026-01-12 23:00:43",
+    "note": "Modelo exportado sem otimização de hiperparâmetros. Pronto para otimização com algoritmo genético."
+}
