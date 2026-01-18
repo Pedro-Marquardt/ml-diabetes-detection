@@ -1,6 +1,6 @@
 [project]
-name = "virtual-assistant-ai-api"
-version = "2.1.5"
+name = "diabetes-api"
+version = "1.0.0"
 description = "AI Assistant interactions"
 requires-python = ">=3.12"
 dynamic = ["dependencies", "optional-dependencies"]
