@@ -1,0 +1,31 @@
+[project]
+name = "virtual-assistant-ai-api"
+version = "2.1.5"
+description = "AI Assistant interactions"
+requires-python = ">=3.12"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools]
+packages = ["api"]
+package-dir = {"" = "."}
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = { file = ["requirements-dev.txt"] }}
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=src"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_third_party = ["tqdm", "boto3"]
+known_first_party = ["vector_databases", "services", "rag_agents", "config"]

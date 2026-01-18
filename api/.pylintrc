@@ -1,0 +1,18 @@
+[MASTER]
+# Diretórios a serem ignorados
+ignore=venv,__tests__,__pycache__,webrtc_services
+
+[MESSAGES CONTROL]
+# Desabilitar regras específicas
+disable=C0111,C0103,C0330,C0326,W0311,W0603,R0903,R0913,R0914,R0915,C0411,C0415,W1203,R1705,R1710,R0801,C0114,C0115,C0116,W0107,W0718
+
+[TYPECHECK]
+ignored-modules=pydantic
+
+[FORMAT]
+# Limite de caracteres por linha
+max-line-length=120
+
+[BASIC]
+# Nomes de variáveis permitidos, úteis para variáveis curtas como x, y, z
+good-names=i,j,k,x,y,z

@@ -1,0 +1,13 @@
+.git
+.vscode
+Dockerfile
+docker-compose.yml
+gitlab
+kubernetes
+.gitlab-ci.yml
+README.md
+.env.example
+.env.test
+pytest.ini
+.pylintrc
+requirements-dev.txt
