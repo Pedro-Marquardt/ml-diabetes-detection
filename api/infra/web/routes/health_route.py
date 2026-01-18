@@ -1,6 +1,7 @@
 """
 Health check routes
 """
+
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from datetime import datetime
@@ -14,7 +15,7 @@ async def health_check():
         content={
             "status": "healthy",
             "message": "Server is running",
-            "timestamp": datetime.now().isoformat()
+            "timestamp": datetime.now().isoformat(),
         },
-        status_code=200
+        status_code=200,
     )

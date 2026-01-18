@@ -23,7 +23,9 @@ class OpenaiLLMService(LLMService):
     def model(self) -> BaseChatModel:
         return self._create_chat_model(temperature=0.5, top_p=0.9)
 
-    def _create_chat_model(self, temperature: float = 0.5, top_p: float = 0.9) -> BaseChatModel:
+    def _create_chat_model(
+        self, temperature: float = 0.5, top_p: float = 0.9
+    ) -> BaseChatModel:
         return ChatOpenAI(
             model=self.model_name,
             streaming=self.stream,
@@ -47,7 +49,7 @@ class OpenaiLLMService(LLMService):
 
         # Create model with temperature and top_p
         chat_model = self._create_chat_model(temperature=temperature, top_p=top_p)
-        
+
         async for chunk in chat_model.astream(messages):
             yield chunk.content
 

@@ -6,6 +6,7 @@ from api.application.enum.income_level import IncomeLevel
 
 class PatientData(BaseModel):
     """Dados do paciente para predição - 18 features"""
+
     age: float = Field(..., ge=0, le=120, description="Idade do paciente")
     education_level: EducationLevel = Field(..., description="Nível de educação")
     income_level: IncomeLevel = Field(..., description="Nível de renda")
@@ -28,6 +29,7 @@ class PatientData(BaseModel):
 
 class PredictionResponse(BaseModel):
     """Resposta da predição"""
+
     has_diabetes: bool
     probability: float = Field(..., ge=0, le=1)
     threshold_used: float
@@ -36,5 +38,8 @@ class PredictionResponse(BaseModel):
 
 class DiagnosticReportResponse(BaseModel):
     """Resposta completa com predição e relatório diagnóstico"""
+
     prediction: PredictionResponse
-    diagnostic_report: str = Field(..., description="Relatório médico explicativo gerado pela LLM")
+    diagnostic_report: str = Field(
+        ..., description="Relatório médico explicativo gerado pela LLM"
+    )

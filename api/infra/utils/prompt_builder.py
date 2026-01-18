@@ -14,7 +14,7 @@ def create_user_prompt(
     """Creates user prompt with patient data and prediction result"""
     patient_info = format_patient_data(patient_data)
     prediction_info = format_prediction_result(prediction_result)
-    
+
     return f"""{patient_info}
 
 {prediction_info}

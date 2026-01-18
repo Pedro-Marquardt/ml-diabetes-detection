@@ -1,6 +1,7 @@
 """
 FastAPI Application
 """
+
 from fastapi import FastAPI
 from api.infra.web.routes import health_router, diagnostic_router
 
@@ -8,7 +9,7 @@ from api.infra.web.routes import health_router, diagnostic_router
 app = FastAPI(
     title="Diabetes Detection API",
     description="API para predição de diabetes usando Machine Learning",
-    version="1.0.0"
+    version="1.0.0",
 )
 
 # Registrar rotas
@@ -21,8 +22,4 @@ async def root():
     """
     Rota raiz
     """
-    return {
-        "message": "Diabetes Detection API",
-        "version": "1.0.0",
-        "docs": "/docs"
-    }
+    return {"message": "Diabetes Detection API", "version": "1.0.0", "docs": "/docs"}

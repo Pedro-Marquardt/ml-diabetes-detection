@@ -28,13 +28,13 @@ PATIENT DATA:
 
 def format_prediction_result(prediction_result: Dict[str, Any]) -> str:
     """Formats prediction result for LLM prompt"""
-    has_diabetes = prediction_result['has_diabetes']
-    probability = prediction_result['probability']
-    confidence = prediction_result['confidence']
-    threshold = prediction_result['threshold_used']
-    
+    has_diabetes = prediction_result["has_diabetes"]
+    probability = prediction_result["probability"]
+    confidence = prediction_result["confidence"]
+    threshold = prediction_result["threshold_used"]
+
     probability_percent = probability * 100
-    
+
     return f"""
 ANALYSIS RESULT:
 - Prediction: {'DIABETES DETECTED' if has_diabetes else 'Diabetes not detected'}

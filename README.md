@@ -128,3 +128,50 @@ Após iniciar a API, acesse a documentação interativa:
 
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
+
+## 🧪 Testes
+
+Para executar os testes unitários da API:
+
+```bash
+# Executar todos os testes
+pytest api/__tests__/
+
+# Executar com verbose
+pytest api/__tests__/ -v
+
+# Executar testes específicos
+pytest api/__tests__/unit/services/llm_services/
+pytest api/__tests__/unit/services/test_diagnostic_service.py
+
+# Executar com cobertura
+pytest api/__tests__/ --cov=api --cov-report=html
+
+# Executar apenas testes que falharam na última execução
+pytest --lf
+```
+
+## 🔍 Lint e Formatação
+
+Para formatar o código com Black:
+
+```bash
+# Formatar todos os arquivos Python
+black .
+
+# Verificar sem modificar (dry-run)
+black . --check
+
+# Formatar apenas arquivos específicos
+black api/infra/services/
+```
+
+Para verificar o código com pylint:
+
+```bash
+# Verificar todos os arquivos
+pylint api/
+
+# Verificar arquivo específico
+pylint api/infra/services/llm_services/ollama_llm_service.py
+```
