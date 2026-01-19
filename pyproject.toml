@@ -1,0 +1,59 @@
+[project]
+name = "diabetes-api"
+version = "1.0.0"
+description = "Diabetes Detection API using Machine Learning with LLM-powered diagnostic reports"
+requires-python = ">=3.12"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools]
+packages = ["api"]
+package-dir = {"" = "."}
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies = {dev = { file = ["requirements-dev.txt"] }}
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | __pycache__
+  | \.pytest_cache
+  | jupyter
+)/
+'''
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_third_party = [
+    "fastapi",
+    "pydantic",
+    "langchain",
+    "langchain_core",
+    "langchain_community",
+    "langchain_ollama",
+    "langchain_openai",
+    "scikit_learn",
+    "joblib",
+    "numpy",
+    "pandas",
+    "dependency_injector",
+    "uvicorn",
+    "gunicorn",
+    "httpx",
+]
+known_first_party = ["api"]
