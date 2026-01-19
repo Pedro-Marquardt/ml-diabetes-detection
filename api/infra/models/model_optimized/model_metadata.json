@@ -1,0 +1,36 @@
+{
+    "model_type": "Logistic Regression (Optimized with GA + Threshold)",
+    "export_date": "2026-01-17 22:15:41",
+    "hyperparameters": {
+        "C": 0.01,
+        "penalty": "l1",
+        "solver": "liblinear",
+        "class_weight": null,
+        "max_iter": 2076,
+        "random_state": 42
+    },
+    "performance_metrics": {
+        "accuracy": 91.525,
+        "precision": 97.94111987685203,
+        "recall": 84.83333333333334,
+        "f1_score": 90.91720996695544,
+        "threshold_used": 0.5907718285515619
+    },
+    "optimization_info": {
+        "method": "Genetic Algorithm (DEAP)",
+        "population_size": 30,
+        "generations": 30,
+        "crossover_rate": 0.7,
+        "mutation_rate": 0.3,
+        "cv_folds": 2,
+        "fitness_metric": "F1 Score",
+        "best_cv_score": 0.909691709955617
+    },
+    "preprocessing_info": {
+        "encoder": "Label Encoder",
+        "scaler": "MinMaxScaler",
+        "oversampling": "SMOTE (aplicado apenas no treino)",
+        "random_state": 42,
+        "preprocessors_included": true
+    }
+}

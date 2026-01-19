@@ -143,6 +143,13 @@ checkpoints/
 logs/
 tensorboard_logs/
 
+# Exceção: permitir modelos da API
+!api/infra/models/
+!api/infra/models/**
+!api/infra/models/**/*.joblib
+!api/infra/models/**/*.pkl
+!api/infra/models/**/*.json
+
 # IDE
 .vscode/
 .idea/
